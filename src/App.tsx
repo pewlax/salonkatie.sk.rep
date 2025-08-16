@@ -500,7 +500,7 @@ V Salóne Katie sa postaráme o dámy, pánov aj deti s láskou, trpezlivosťou 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="fade-in">
               <img 
-                src="public/WhatsApp Image 2025-08-15 at 16.34.53_5b8312db.jpg" 
+                src="WhatsApp Image 2025-08-15 at 16.34.53_5b8312db.jpg" 
                 alt="Katie - Expert Hair Stylist" 
                 className="rounded-3xl shadow-2xl w-full aspect-square object-cover"
               />
