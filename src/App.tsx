@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Scissors, Clock, Users, Sparkles, ArrowRight, MapPin, Phone, Mail, Instagram, Facebook, Star } from 'lucide-react';
+import { Scissors, Clock, Users, Sparkles, ArrowRight, MapPin, Phone, Mail, Instagram, Facebook, Star, X } from 'lucide-react';
 
 function App() {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [activeTab, setActiveTab] = useState(0);
+  const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver((entries) => {
@@ -657,6 +658,15 @@ V Salóne Katie sa postaráme o dámy, pánov aj deti s láskou, trpezlivosťou 
               </div>
             ))}
           </div>
+          
+          <div className="text-center mt-8 fade-in">
+            <button
+              onClick={() => setIsPortfolioModalOpen(true)}
+              className="bg-gradient-to-r from-rose-400 to-pink-400 text-white px-8 py-3 rounded-full text-lg font-medium hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            >
+              Zobraziť viac
+            </button>
+          </div>
         </div>
       </section>
 
@@ -756,6 +766,75 @@ V Salóne Katie sa postaráme o dámy, pánov aj deti s láskou, trpezlivosťou 
     </div>
   </div>
       </footer>
+
+      {/* Portfolio Modal */}
+      {isPortfolioModalOpen && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
+            <div className="flex items-center justify-between p-6 border-b border-stone-200">
+              <h3 className="text-2xl font-serif font-bold text-stone-800">Naše portfólio</h3>
+              <button
+                onClick={() => setIsPortfolioModalOpen(false)}
+                className="p-2 hover:bg-stone-100 rounded-full transition-colors"
+              >
+                <X className="h-6 w-6 text-stone-600" />
+              </button>
+            </div>
+            <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {/* Existing images */}
+                {portfolioImages.map((image, index) => (
+                  <div key={index} className="group relative overflow-hidden rounded-xl aspect-square">
+                    <img 
+                      src={image.src} 
+                      alt={image.label}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                      <p className="text-sm text-white font-medium">{image.label}</p>
+                    </div>
+                  </div>
+                ))}
+                
+                {/* Additional portfolio images */}
+                {[
+                  "/IMG-20250816-WA0026.jpg",
+                  "/IMG-20250816-WA0025.jpg",
+                  "/IMG-20250816-WA0024.jpg",
+                  "/IMG-20250816-WA0023.jpg",
+                  "/IMG-20250816-WA0022.jpg",
+                  "/IMG-20250816-WA0021.jpg",
+                  "/IMG-20250816-WA0020.jpg",
+                  "/IMG-20250816-WA0019.jpg",
+                  "/IMG-20250816-WA0018.jpg",
+                  "/IMG-20250816-WA0017.jpg",
+                  "/IMG-20250816-WA0016.jpg",
+                  "/IMG-20250816-WA0015.jpg",
+                  "/IMG-20250816-WA0014.jpg",
+                  "/IMG-20250816-WA0013.jpg",
+                  "/IMG-20250816-WA0012.jpg",
+                  "/IMG-20250816-WA0011.jpg",
+                  "/IMG-20250816-WA0010.jpg",
+                  "/IMG-20250816-WA0009.jpg",
+                  "/IMG-20250816-WA0008.jpg",
+                  "/IMG-20250816-WA0007.jpg"
+                ].map((imageSrc, index) => (
+                  <div key={`additional-${index}`} className="group relative overflow-hidden rounded-xl aspect-square">
+                    <img 
+                      src={imageSrc} 
+                      alt={`Portfolio práca ${index + 6}`}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                      <p className="text-sm text-white font-medium">Portfolio práca</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
