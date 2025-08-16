@@ -316,6 +316,26 @@ function App() {
     {
       src: "/WhatsApp Image 2025-07-25 at 18.49.41_635c5d93.jpg",
       label: "Spoločenské účesy"
+    },
+    {
+      src: "/IMG-20250816-WA0031.jpg",
+      label: "Portfolio práca"
+    },
+    {
+      src: "/IMG-20250816-WA0032.jpg",
+      label: "Portfolio práca"
+    },
+    {
+      src: "/IMG-20250816-WA0034.jpg",
+      label: "Portfolio práca"
+    },
+    {
+      src: "/IMG-20250816-WA0035.jpg",
+      label: "Portfolio práca"
+    },
+    {
+      src: "/IMG-20250816-WA0036.jpg",
+      label: "Portfolio práca"
     }
   ];
 
@@ -480,7 +500,7 @@ V Salóne Katie sa postaráme o dámy, pánov aj deti s láskou, trpezlivosťou 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="fade-in">
               <img 
-                src="/WhatsApp Image 2025-07-28 at 16.29.06_edb7a34d.jpg" 
+                src="public/WhatsApp Image 2025-08-15 at 16.34.53_5b8312db.jpg" 
                 alt="Katie - Expert Hair Stylist" 
                 className="rounded-3xl shadow-2xl w-full aspect-square object-cover"
               />
@@ -645,7 +665,7 @@ V Salóne Katie sa postaráme o dámy, pánov aj deti s láskou, trpezlivosťou 
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {portfolioImages.map((image, index) => (
+            {portfolioImages.slice(0, 10).map((image, index) => (
               <div key={index} className="fade-in group relative overflow-hidden rounded-2xl aspect-square">
                 <img 
                   src={image.src} 
