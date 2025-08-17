@@ -275,6 +275,66 @@ function App() {
           ]
         }
       ]
+    },
+    {
+      name: "Cenník - Nechty",
+      services: [
+        {
+          category: "Nechtové služby",
+          items: [
+            {
+              name: "Nové gélové nechty",
+              description: "(základná modelácia s jednoduchým zdobením)",
+              prices: [{ type: "", price: "35 €" }]
+            },
+            {
+              name: "Doplnenie gélových nechtov",
+              description: "(základná modelácia s jednoduchým zdobením)",
+              prices: [{ type: "", price: "30 €" }]
+            },
+            {
+              name: "Odstránenie gélových nechtov",
+              description: "(profesionálne odstránenie gélu so záverečným ošetrením)",
+              prices: [{ type: "", price: "15 €" }]
+            },
+            {
+              name: "Oprava / výmena 1 gélového nechtu",
+              description: "",
+              prices: [{ type: "", price: "3 €" }]
+            },
+            {
+              name: "Gél lak",
+              description: "",
+              prices: [{ type: "", price: "25 €" }]
+            },
+            {
+              name: "Odstránenie gél laku",
+              description: "",
+              prices: [{ type: "", price: "10 €" }]
+            },
+            {
+              name: "Extra dížka",
+              description: "",
+              prices: [{ type: "", price: "4 €" }]
+            },
+            {
+              name: "Zdobenie",
+              description: "",
+              prices: [{ type: "", price: "3 €" }]
+            },
+            {
+              name: "Manikúra",
+              description: "",
+              prices: [{ type: "", price: "10 €" }]
+            },
+            {
+              name: "Japonská manikúra",
+              description: "",
+              prices: [{ type: "", price: "20 €" }]
+            }
+          ]
+        }
+      ]
     }
   ];
 
